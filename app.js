@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
 const expressValidator = require('express-validator')
 //app
@@ -14,16 +15,19 @@ mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-}).then(()=>{
+}).then(() => {
     console.log("Database connected")
 })
+mongoose.set('debug', true);
+
 //routes
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(expressValidator())
-app.use('/api',userRoute)
+app.use('/api', authRoute)
+app.use('/api', userRoute)
 
 
 const port = process.env.PORT || 4000
