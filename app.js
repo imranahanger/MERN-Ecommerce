@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
+const categoryRoute = require('./routes/category')
 const expressValidator = require('express-validator')
 //app
 const app = express()
@@ -28,6 +29,7 @@ app.use(cookieParser())
 app.use(expressValidator())
 app.use('/api', authRoute)
 app.use('/api', userRoute)
+app.use('/api', categoryRoute)
 
 
 const port = process.env.PORT || 4000

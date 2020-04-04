@@ -47,8 +47,6 @@ exports.requireSignIn = expressJwt({
 })
 
 exports.isAuth = async (req,res,next)=>{
-    console.log("-=-=-=-=-=-=-=-=",req.auth)
-    console.log("-=-=-=-=-=-=-=-=",req.profile)
     let user = req.profile&&req.auth&&req.profile._id==req.auth._id
     if(!user){
         return res.status(403).json({
