@@ -53,7 +53,7 @@ exports.create = async (req, res) => {
 }
 exports.productById = async(req,res,next,id)=>{
     Product.findById(id).exec((err,product)=>{
-        if(err){
+        if(err||!product){
             return res.status(400).json({
                 error:"Product not found"
             })
@@ -132,3 +132,4 @@ exports.update = async(req,res)=>{
     })
 
 }
+
