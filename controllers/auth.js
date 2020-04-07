@@ -46,20 +46,43 @@ exports.requireSignIn = expressJwt({
     userProperty: "auth"
 })
 
-exports.isAuth = async (req,res,next)=>{
-    let user = req.profile&&req.auth&&req.profile._id==req.auth._id
-    if(!user){
+exports.isAuth = async (req, res, next) => {
+    let user = req.profile && req.auth && req.profile._id == req.auth._id
+    if (!user) {
         return res.status(403).json({
-            error:"Access Denied"
+            error: "Access Denied"
         })
     }
     next();
 }
-exports.isAdmin=(req,res,next)=>{
-    if(req.profile.role==0){
+exports.isAdmin = (req, res, next) => {
+    if (req.profile.role == 0) {
         return res.status(403).json({
-            error:"Admin resource! Access denied"
+            error: "Admin resource! Access denied"
         })
     }
     next()
+}
+
+exports.read = (req, res) => {
+    req.profile.hashed_password = undefined
+    req.profile.salt = undefined
+    return res.json(req.profile)
+}
+exports.update = (req, res) => {
+    User.findOneAndUpdate(
+        {_id: req.profile._id},
+        {$set: req.body},
+        {new: true},
+        (err,user)=>{
+            if (err || !user) {
+                return res.status(400).json({
+                    error: "You are not authorized to perform this action"
+                })
+            }
+            user.hashed_password = undefined
+            user.salt = undefined
+            return res.json(user)
+        }
+    )
 }

@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
 const categoryRoute = require('./routes/category')
@@ -16,6 +17,7 @@ const app = express()
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
     useCreateIndex: true
 }).then(() => {
     console.log("Database connected")
@@ -28,6 +30,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(expressValidator())
+app.use(cors())
 app.use('/api', authRoute)
 app.use('/api', userRoute)
 app.use('/api', categoryRoute)
