@@ -1,2 +1,5 @@
-node_modules
-.env
+ecombackend/node_modules/*
+
+ecombackend/.env/*
+
+ecomfrontend/node_modules/*
