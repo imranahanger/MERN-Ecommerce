@@ -1,3 +1,5 @@
-EcomApi/node_modules/*
+ecombackend/node_modules/*
 
-EcomApi/.env/*
+ecombackend/.env/*
+
+ecomfrontend/node_modules/*
