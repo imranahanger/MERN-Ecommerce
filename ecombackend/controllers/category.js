@@ -56,7 +56,9 @@ exports.update = async(req,res)=>{
     })
 }
 exports.list=async(req,res)=>{
-    Category.find().exec((err,data)=>{
+    Category.find()
+    .populate('subCategory','_id name subCategory')
+    .exec((err,data)=>{
         if (err) {
             return res.status(400).json({
                 error: errorHandler(err)

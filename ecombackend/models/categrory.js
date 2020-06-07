@@ -7,7 +7,11 @@ const categorySchema = new mongoose.Schema(
             trim: true,
             required: true,
             maxlength: 32
-        }
+        },
+        subCategory: {
+            type: String,
+            ref: 'category'
+        },
     },
     { timestamps: true }
 );
