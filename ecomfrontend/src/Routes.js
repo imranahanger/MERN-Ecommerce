@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Home from './core/Home'
+import Shop from './core/Shop'
 import SignIn from './user/SignIn'
 import SignUp from './user/SignUp'
 import Dashboard from "./user/userDashboard";
@@ -14,6 +15,7 @@ const Routes = () => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home}/>
+                <Route path="/shop" exact component={Shop}/>
                 <Route path="/signIn" exact component={SignIn}/>
                 <Route path="/signUp" exact component={SignUp}/>
                 <PrivateRoute path="/user/dashboard" exact component={Dashboard}/>

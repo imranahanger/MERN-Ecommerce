@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "./Menu";
+import "../style.css"
 import {BrowserRouter} from "react-router-dom";
 
 const Layout = ({title = "Title", description = 'Description', className, children}) => (
