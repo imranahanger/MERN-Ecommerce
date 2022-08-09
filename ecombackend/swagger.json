@@ -1,0 +1,3447 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "E-commerce",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/signUp": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "USER SIGNUP",
+        "operationId": "USERSIGNUP",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/USERSIGNUPREQUEST"
+              },
+              "example": {
+                "name": "ubair",
+                "email": "ubair@gmail.com",
+                "about": "developer",
+                "salt": "String",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "212"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"d4-j055mapN1OyhOAoDQwlpudLKhOc\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 14:56:45 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/USERSIGNUP"
+                },
+                "example": {
+                  "user": {
+                    "role": 0,
+                    "history": [],
+                    "_id": "62e000ad3058680606377036",
+                    "name": "ubair",
+                    "email": "ubair@gmail.com",
+                    "about": "developer",
+                    "createdAt": "2022-07-26T14:56:45.420Z",
+                    "updatedAt": "2022-07-26T14:56:45.420Z",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/signIn": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "USER SIGNIN",
+        "operationId": "USERSIGNIN",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/USERSIGNINREQUEST"
+              },
+              "example": {
+                "email": "uzma@admin.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwMDBhZDMwNTg2ODA2MDYzNzcwMzYiLCJpYXQiOjE2NTg4NDc1NDZ9.jnrkCfCZWDPUxI_2Yms8QV3dFRZ_HtSjWHGVctFXaaw; Path=/"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "253"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"fd-SeN52bq7yn3eyi/MJidlcNFx2Vo\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 14:59:06 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/USERSIGNIN"
+                },
+                "example": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwMDBhZDMwNTg2ODA2MDYzNzcwMzYiLCJpYXQiOjE2NTg4NDc1NDZ9.jnrkCfCZWDPUxI_2Yms8QV3dFRZ_HtSjWHGVctFXaaw",
+                  "user": {
+                    "_id": "62e000ad3058680606377036",
+                    "email": "ubair@gmail.com",
+                    "name": "ubair",
+                    "role": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/signOut": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "USER SIGNOUT",
+        "operationId": "USERSIGNOUT",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Set-Cookie": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "t=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"1d-1PSz8IwoNGQN69DMHonn23nVamc\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 15:01:09 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/USERSIGNOUT"
+                },
+                "example": {
+                  "message": "Signout success"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/category/create/{userId}": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "ADD CATEGORY",
+        "operationId": "ADDCATEGORY",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5ed8577c4d05902aac06ce2a"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ADDCATEGORYREQUEST"
+              },
+              "example": {
+                "name": "JSP"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "142"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"8e-unOLIm4TG+6QStRocau707a7XEU\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Wed, 27 Jul 2022 04:10:36 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ADDCATEGORY"
+                },
+                "example": {
+                  "data": {
+                    "_id": "62e0babb5be5990756ad5b68",
+                    "name": "JSP",
+                    "createdAt": "2022-07-27T04:10:35.854Z",
+                    "updatedAt": "2022-07-27T04:10:35.854Z",
+                    "__v": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET CATEGORIES",
+        "operationId": "GETCATEGORIES",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "2511"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"9cf-M+WvD4Ah0Cy1Ywjb2U1QDE3p5NI\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 15:13:14 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GETCATEGORy"
+                  },
+                  "description": "",
+                  "example": [
+                    {
+                      "_id": "5e88110830e7e82efceee4f0",
+                      "name": "Node",
+                      "createdAt": "2020-04-04T04:46:00.851Z",
+                      "updatedAt": "2020-04-04T04:46:00.851Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                      "name": "PYTHON",
+                      "createdAt": "2020-04-06T05:05:14.036Z",
+                      "updatedAt": "2020-04-06T05:07:48.845Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                      "name": "ASP",
+                      "createdAt": "2020-04-06T05:05:14.046Z",
+                      "updatedAt": "2020-04-06T05:05:14.046Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5e8ab89368f48f4bc4d1dd7d",
+                      "name": "FLUTTER",
+                      "createdAt": "2020-04-06T05:05:23.437Z",
+                      "updatedAt": "2020-04-06T05:05:23.437Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5e8ab89868f48f4bc4d1dd7e",
+                      "name": "JAVA",
+                      "createdAt": "2020-04-06T05:05:28.656Z",
+                      "updatedAt": "2020-04-06T05:05:28.656Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed86e868544db2b80cf87a3",
+                      "name": "JSP",
+                      "createdAt": "2020-06-04T03:46:14.038Z",
+                      "updatedAt": "2020-06-04T03:46:14.038Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed86e8a8544db2b80cf87a4",
+                      "name": "JSP",
+                      "createdAt": "2020-06-04T03:46:18.343Z",
+                      "updatedAt": "2020-06-04T03:46:18.343Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed86e8f8544db2b80cf87a5",
+                      "name": "JSP",
+                      "createdAt": "2020-06-04T03:46:23.008Z",
+                      "updatedAt": "2020-06-04T03:46:23.008Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed86e918544db2b80cf87a6",
+                      "name": "JSP",
+                      "createdAt": "2020-06-04T03:46:25.327Z",
+                      "updatedAt": "2020-06-04T03:46:25.327Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed86f99bed55d2388e683d7",
+                      "name": "JSP",
+                      "subCategory": "5e8ab88a68f48f4bc4d1dd7c",
+                      "createdAt": "2020-06-04T03:50:49.165Z",
+                      "updatedAt": "2020-06-04T03:50:49.165Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5ed8714ee7591e2050e4eac1",
+                      "name": "JSPv",
+                      "subCategory": "5ed86f99bed55d2388e683d7",
+                      "createdAt": "2020-06-04T03:58:06.719Z",
+                      "updatedAt": "2020-06-04T03:58:06.719Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddab838323dc2ee01b3fc5",
+                      "name": "tyest",
+                      "createdAt": "2020-06-08T03:07:47.039Z",
+                      "updatedAt": "2020-06-08T03:07:47.039Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddb145de88a827e4835806",
+                      "name": "node",
+                      "createdAt": "2020-06-08T03:32:21.859Z",
+                      "updatedAt": "2020-06-08T03:32:21.859Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddb14ade88a827e4835807",
+                      "name": "node",
+                      "createdAt": "2020-06-08T03:32:26.246Z",
+                      "updatedAt": "2020-06-08T03:32:26.246Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddb151de88a827e4835808",
+                      "name": "node",
+                      "createdAt": "2020-06-08T03:32:33.738Z",
+                      "updatedAt": "2020-06-08T03:32:33.738Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddb496de88a827e483581c",
+                      "name": "node",
+                      "createdAt": "2020-06-08T03:46:30.301Z",
+                      "updatedAt": "2020-06-08T03:46:30.301Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "5eddb58fde88a827e483581d",
+                      "name": "mkl",
+                      "createdAt": "2020-06-08T03:50:39.638Z",
+                      "updatedAt": "2020-06-08T03:50:39.638Z",
+                      "__v": 0
+                    },
+                    {
+                      "_id": "62e004253058680606377044",
+                      "name": "JSP",
+                      "createdAt": "2022-07-26T15:11:33.997Z",
+                      "updatedAt": "2022-07-26T15:11:33.997Z",
+                      "__v": 0
+                    }
+                  ]
+                },
+                "example": [
+                  {
+                    "_id": "5e88110830e7e82efceee4f0",
+                    "name": "Node",
+                    "createdAt": "2020-04-04T04:46:00.851Z",
+                    "updatedAt": "2020-04-04T04:46:00.851Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                    "name": "PYTHON",
+                    "createdAt": "2020-04-06T05:05:14.036Z",
+                    "updatedAt": "2020-04-06T05:07:48.845Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                    "name": "ASP",
+                    "createdAt": "2020-04-06T05:05:14.046Z",
+                    "updatedAt": "2020-04-06T05:05:14.046Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5e8ab89368f48f4bc4d1dd7d",
+                    "name": "FLUTTER",
+                    "createdAt": "2020-04-06T05:05:23.437Z",
+                    "updatedAt": "2020-04-06T05:05:23.437Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5e8ab89868f48f4bc4d1dd7e",
+                    "name": "JAVA",
+                    "createdAt": "2020-04-06T05:05:28.656Z",
+                    "updatedAt": "2020-04-06T05:05:28.656Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed86e868544db2b80cf87a3",
+                    "name": "JSP",
+                    "createdAt": "2020-06-04T03:46:14.038Z",
+                    "updatedAt": "2020-06-04T03:46:14.038Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed86e8a8544db2b80cf87a4",
+                    "name": "JSP",
+                    "createdAt": "2020-06-04T03:46:18.343Z",
+                    "updatedAt": "2020-06-04T03:46:18.343Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed86e8f8544db2b80cf87a5",
+                    "name": "JSP",
+                    "createdAt": "2020-06-04T03:46:23.008Z",
+                    "updatedAt": "2020-06-04T03:46:23.008Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed86e918544db2b80cf87a6",
+                    "name": "JSP",
+                    "createdAt": "2020-06-04T03:46:25.327Z",
+                    "updatedAt": "2020-06-04T03:46:25.327Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed86f99bed55d2388e683d7",
+                    "name": "JSP",
+                    "subCategory": "5e8ab88a68f48f4bc4d1dd7c",
+                    "createdAt": "2020-06-04T03:50:49.165Z",
+                    "updatedAt": "2020-06-04T03:50:49.165Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5ed8714ee7591e2050e4eac1",
+                    "name": "JSPv",
+                    "subCategory": "5ed86f99bed55d2388e683d7",
+                    "createdAt": "2020-06-04T03:58:06.719Z",
+                    "updatedAt": "2020-06-04T03:58:06.719Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddab838323dc2ee01b3fc5",
+                    "name": "tyest",
+                    "createdAt": "2020-06-08T03:07:47.039Z",
+                    "updatedAt": "2020-06-08T03:07:47.039Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddb145de88a827e4835806",
+                    "name": "node",
+                    "createdAt": "2020-06-08T03:32:21.859Z",
+                    "updatedAt": "2020-06-08T03:32:21.859Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddb14ade88a827e4835807",
+                    "name": "node",
+                    "createdAt": "2020-06-08T03:32:26.246Z",
+                    "updatedAt": "2020-06-08T03:32:26.246Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddb151de88a827e4835808",
+                    "name": "node",
+                    "createdAt": "2020-06-08T03:32:33.738Z",
+                    "updatedAt": "2020-06-08T03:32:33.738Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddb496de88a827e483581c",
+                    "name": "node",
+                    "createdAt": "2020-06-08T03:46:30.301Z",
+                    "updatedAt": "2020-06-08T03:46:30.301Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "5eddb58fde88a827e483581d",
+                    "name": "mkl",
+                    "createdAt": "2020-06-08T03:50:39.638Z",
+                    "updatedAt": "2020-06-08T03:50:39.638Z",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "62e004253058680606377044",
+                    "name": "JSP",
+                    "createdAt": "2022-07-26T15:11:33.997Z",
+                    "updatedAt": "2022-07-26T15:11:33.997Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/category/{categoryId}": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET CATEGORY",
+        "operationId": "GETCATEGORY",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5e8ab88a68f48f4bc4d1dd7b"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "136"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"88-qBLRj1KWpbdXG3jcx972VSbHnoI\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 16:05:33 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETCATEGORY1"
+                },
+                "example": {
+                  "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                  "name": "PYTHON",
+                  "createdAt": "2020-04-06T05:05:14.036Z",
+                  "updatedAt": "2020-04-06T05:07:48.845Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/category/{categoryId}/{userId}": {
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE CATEGORY",
+        "operationId": "DELETECATEGORY",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5eddb58fde88a827e483581d"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5ed8577c4d05902aac06ce2a"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "30"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"1e-oCBh6KwgTqOw4kBmQwxTMOxy7mE\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 16:08:27 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/DELETECATEGORY"
+                },
+                "example": {
+                  "message": "Category deleted"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "UPDATE CATEGORY",
+        "operationId": "UPDATECATEGORY",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5eddb496de88a827e483581c"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5ed8577c4d05902aac06ce2a"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UPDATECATEGORYREQUEST"
+              },
+              "example": {
+                "name": "NODE"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "134"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"86-kZ1ZNgtyCZoL4sNXpYh9J2zy6yk\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 16:10:24 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/UPDATECATEGORY"
+                },
+                "example": {
+                  "_id": "5eddb496de88a827e483581c",
+                  "name": "NODE",
+                  "createdAt": "2020-06-08T03:46:30.301Z",
+                  "updatedAt": "2022-07-26T16:10:24.033Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/product/create/{userId}": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "ADD PRODUCT",
+        "operationId": "ADDPRODUCT",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5ed8577c4d05902aac06ce2a"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "description",
+                  "price",
+                  "category",
+                  "shipping",
+                  "photo",
+                  "quantity"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "SQL  Book"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "My book"
+                  },
+                  "price": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 30
+                  },
+                  "category": {
+                    "type": "string",
+                    "example": "5e8ab88a68f48f4bc4d1dd7b"
+                  },
+                  "shipping": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "photo": {
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 4
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/products/categories/5e8bfce244a8c705907a82fe": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT LIST CATEGORIES",
+        "operationId": "GETPRODUCTLISTCATEGORIES",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "createdAt"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "desc"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/product/5e8962de0477800b98900422/5e8569c7eae83c22e8513350": {
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "DELETE PRODUCT",
+        "operationId": "DELETEPRODUCT",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/product/5e89654c69a8be1618fef638/5e8569c7eae83c22e8513350": {
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "UPDATE PRODUCT",
+        "operationId": "UPDATEPRODUCT",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "name",
+                  "description",
+                  "price",
+                  "category",
+                  "shipping",
+                  "photo"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Node Book"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "My first book"
+                  },
+                  "price": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 30
+                  },
+                  "category": {
+                    "type": "string",
+                    "example": "5e88110830e7e82efceee4f0"
+                  },
+                  "shipping": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "photo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT LIST",
+        "operationId": "GETPRODUCTLIST",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 10
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "createdAt"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "3531"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"dcb-m0/H01FKtSYEHCKxogdJQlJUEt0\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 16:12:58 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GETPRODUCTLIST"
+                  },
+                  "description": "",
+                  "example": [
+                    {
+                      "sold": 0,
+                      "_id": "5e89654c69a8be1618fef638",
+                      "name": "Node Book",
+                      "description": "My first book",
+                      "price": 30,
+                      "category": {
+                        "_id": "5e88110830e7e82efceee4f0",
+                        "name": "Node",
+                        "createdAt": "2020-04-04T04:46:00.851Z",
+                        "updatedAt": "2020-04-04T04:46:00.851Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-04-05T04:57:48.454Z",
+                      "updatedAt": "2020-04-05T05:02:02.448Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5e8bf8fa5f44aa185c01279c",
+                      "name": "Phyton Book",
+                      "description": "My first book",
+                      "price": 20,
+                      "category": {
+                        "_id": "5e88110830e7e82efceee4f0",
+                        "name": "Node",
+                        "createdAt": "2020-04-04T04:46:00.851Z",
+                        "updatedAt": "2020-04-04T04:46:00.851Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-04-07T03:52:26.585Z",
+                      "updatedAt": "2020-04-07T03:52:26.585Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5e8bf90e5f44aa185c01279d",
+                      "name": "Php Book",
+                      "description": "My first book",
+                      "price": 20,
+                      "category": {
+                        "_id": "5e88110830e7e82efceee4f0",
+                        "name": "Node",
+                        "createdAt": "2020-04-04T04:46:00.851Z",
+                        "updatedAt": "2020-04-04T04:46:00.851Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-04-07T03:52:46.706Z",
+                      "updatedAt": "2020-04-07T03:52:46.706Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5e8bfc0344a8c705907a82fd",
+                      "name": "ASP  Book",
+                      "description": "My book",
+                      "price": 30,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                        "name": "ASP",
+                        "createdAt": "2020-04-06T05:05:14.046Z",
+                        "updatedAt": "2020-04-06T05:05:14.046Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-04-07T04:05:23.703Z",
+                      "updatedAt": "2020-04-07T04:05:23.703Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5e8bfce244a8c705907a82fe",
+                      "name": "SQL  Book",
+                      "description": "My book",
+                      "price": 30,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                        "name": "ASP",
+                        "createdAt": "2020-04-06T05:05:14.046Z",
+                        "updatedAt": "2020-04-06T05:05:14.046Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-04-07T04:09:06.387Z",
+                      "updatedAt": "2020-04-07T04:09:06.387Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5ee04a1d8650750b303d4297",
+                      "name": "SQL  Book",
+                      "description": "My book",
+                      "price": 30,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                        "name": "ASP",
+                        "createdAt": "2020-04-06T05:05:14.046Z",
+                        "updatedAt": "2020-04-06T05:05:14.046Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "createdAt": "2020-06-10T02:49:01.955Z",
+                      "updatedAt": "2020-06-10T02:49:01.955Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5ee04a9c8650750b303d4298",
+                      "name": "trhrthr",
+                      "description": "rtryryr",
+                      "price": 345,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                        "name": "PYTHON",
+                        "createdAt": "2020-04-06T05:05:14.036Z",
+                        "updatedAt": "2020-04-06T05:07:48.845Z",
+                        "__v": 0
+                      },
+                      "quantity": 3,
+                      "shipping": true,
+                      "createdAt": "2020-06-10T02:51:08.853Z",
+                      "updatedAt": "2020-06-10T02:51:08.853Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5ee04ed68650750b303d4299",
+                      "name": "werwerw",
+                      "description": "we w wt wt",
+                      "price": 45,
+                      "category": {
+                        "_id": "5e8ab89368f48f4bc4d1dd7d",
+                        "name": "FLUTTER",
+                        "createdAt": "2020-04-06T05:05:23.437Z",
+                        "updatedAt": "2020-04-06T05:05:23.437Z",
+                        "__v": 0
+                      },
+                      "shipping": true,
+                      "quantity": 6,
+                      "createdAt": "2020-06-10T03:09:10.379Z",
+                      "updatedAt": "2020-06-10T03:09:10.379Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5ee050a58650750b303d429a",
+                      "name": "werwrew",
+                      "description": "234242",
+                      "price": 43,
+                      "category": {
+                        "_id": "5eddb14ade88a827e4835807",
+                        "name": "node",
+                        "createdAt": "2020-06-08T03:32:26.246Z",
+                        "updatedAt": "2020-06-08T03:32:26.246Z",
+                        "__v": 0
+                      },
+                      "shipping": true,
+                      "quantity": 4,
+                      "createdAt": "2020-06-10T03:16:53.832Z",
+                      "updatedAt": "2020-06-10T03:16:53.832Z",
+                      "__v": 0
+                    },
+                    {
+                      "sold": 0,
+                      "_id": "5ee050d68650750b303d429b",
+                      "name": "afafaf",
+                      "description": "14141",
+                      "price": 43,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                        "name": "ASP",
+                        "createdAt": "2020-04-06T05:05:14.046Z",
+                        "updatedAt": "2020-04-06T05:05:14.046Z",
+                        "__v": 0
+                      },
+                      "shipping": true,
+                      "quantity": 3,
+                      "createdAt": "2020-06-10T03:17:42.067Z",
+                      "updatedAt": "2020-06-10T03:17:42.067Z",
+                      "__v": 0
+                    }
+                  ]
+                },
+                "example": [
+                  {
+                    "sold": 0,
+                    "_id": "5e89654c69a8be1618fef638",
+                    "name": "Node Book",
+                    "description": "My first book",
+                    "price": 30,
+                    "category": {
+                      "_id": "5e88110830e7e82efceee4f0",
+                      "name": "Node",
+                      "createdAt": "2020-04-04T04:46:00.851Z",
+                      "updatedAt": "2020-04-04T04:46:00.851Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-04-05T04:57:48.454Z",
+                    "updatedAt": "2020-04-05T05:02:02.448Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5e8bf8fa5f44aa185c01279c",
+                    "name": "Phyton Book",
+                    "description": "My first book",
+                    "price": 20,
+                    "category": {
+                      "_id": "5e88110830e7e82efceee4f0",
+                      "name": "Node",
+                      "createdAt": "2020-04-04T04:46:00.851Z",
+                      "updatedAt": "2020-04-04T04:46:00.851Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-04-07T03:52:26.585Z",
+                    "updatedAt": "2020-04-07T03:52:26.585Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5e8bf90e5f44aa185c01279d",
+                    "name": "Php Book",
+                    "description": "My first book",
+                    "price": 20,
+                    "category": {
+                      "_id": "5e88110830e7e82efceee4f0",
+                      "name": "Node",
+                      "createdAt": "2020-04-04T04:46:00.851Z",
+                      "updatedAt": "2020-04-04T04:46:00.851Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-04-07T03:52:46.706Z",
+                    "updatedAt": "2020-04-07T03:52:46.706Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5e8bfc0344a8c705907a82fd",
+                    "name": "ASP  Book",
+                    "description": "My book",
+                    "price": 30,
+                    "category": {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                      "name": "ASP",
+                      "createdAt": "2020-04-06T05:05:14.046Z",
+                      "updatedAt": "2020-04-06T05:05:14.046Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-04-07T04:05:23.703Z",
+                    "updatedAt": "2020-04-07T04:05:23.703Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5e8bfce244a8c705907a82fe",
+                    "name": "SQL  Book",
+                    "description": "My book",
+                    "price": 30,
+                    "category": {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                      "name": "ASP",
+                      "createdAt": "2020-04-06T05:05:14.046Z",
+                      "updatedAt": "2020-04-06T05:05:14.046Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-04-07T04:09:06.387Z",
+                    "updatedAt": "2020-04-07T04:09:06.387Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5ee04a1d8650750b303d4297",
+                    "name": "SQL  Book",
+                    "description": "My book",
+                    "price": 30,
+                    "category": {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                      "name": "ASP",
+                      "createdAt": "2020-04-06T05:05:14.046Z",
+                      "updatedAt": "2020-04-06T05:05:14.046Z",
+                      "__v": 0
+                    },
+                    "shipping": false,
+                    "createdAt": "2020-06-10T02:49:01.955Z",
+                    "updatedAt": "2020-06-10T02:49:01.955Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5ee04a9c8650750b303d4298",
+                    "name": "trhrthr",
+                    "description": "rtryryr",
+                    "price": 345,
+                    "category": {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                      "name": "PYTHON",
+                      "createdAt": "2020-04-06T05:05:14.036Z",
+                      "updatedAt": "2020-04-06T05:07:48.845Z",
+                      "__v": 0
+                    },
+                    "quantity": 3,
+                    "shipping": true,
+                    "createdAt": "2020-06-10T02:51:08.853Z",
+                    "updatedAt": "2020-06-10T02:51:08.853Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5ee04ed68650750b303d4299",
+                    "name": "werwerw",
+                    "description": "we w wt wt",
+                    "price": 45,
+                    "category": {
+                      "_id": "5e8ab89368f48f4bc4d1dd7d",
+                      "name": "FLUTTER",
+                      "createdAt": "2020-04-06T05:05:23.437Z",
+                      "updatedAt": "2020-04-06T05:05:23.437Z",
+                      "__v": 0
+                    },
+                    "shipping": true,
+                    "quantity": 6,
+                    "createdAt": "2020-06-10T03:09:10.379Z",
+                    "updatedAt": "2020-06-10T03:09:10.379Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5ee050a58650750b303d429a",
+                    "name": "werwrew",
+                    "description": "234242",
+                    "price": 43,
+                    "category": {
+                      "_id": "5eddb14ade88a827e4835807",
+                      "name": "node",
+                      "createdAt": "2020-06-08T03:32:26.246Z",
+                      "updatedAt": "2020-06-08T03:32:26.246Z",
+                      "__v": 0
+                    },
+                    "shipping": true,
+                    "quantity": 4,
+                    "createdAt": "2020-06-10T03:16:53.832Z",
+                    "updatedAt": "2020-06-10T03:16:53.832Z",
+                    "__v": 0
+                  },
+                  {
+                    "sold": 0,
+                    "_id": "5ee050d68650750b303d429b",
+                    "name": "afafaf",
+                    "description": "14141",
+                    "price": 43,
+                    "category": {
+                      "_id": "5e8ab88a68f48f4bc4d1dd7c",
+                      "name": "ASP",
+                      "createdAt": "2020-04-06T05:05:14.046Z",
+                      "updatedAt": "2020-04-06T05:05:14.046Z",
+                      "__v": 0
+                    },
+                    "shipping": true,
+                    "quantity": 3,
+                    "createdAt": "2020-06-10T03:17:42.067Z",
+                    "updatedAt": "2020-06-10T03:17:42.067Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/product/{productId}": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT",
+        "operationId": "GETPRODUCT",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5e89654c69a8be1618fef638"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "352"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"160-k4DQJ46coRYFvGLoI3jl7gaJ4k0\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Tue, 26 Jul 2022 16:13:46 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETPRODUCT"
+                },
+                "example": {
+                  "sold": 0,
+                  "_id": "5e89654c69a8be1618fef638",
+                  "name": "Node Book",
+                  "description": "My first book",
+                  "price": 30,
+                  "category": {
+                    "_id": "5e88110830e7e82efceee4f0",
+                    "name": "Node",
+                    "createdAt": "2020-04-04T04:46:00.851Z",
+                    "updatedAt": "2020-04-04T04:46:00.851Z",
+                    "__v": 0
+                  },
+                  "shipping": false,
+                  "createdAt": "2020-04-05T04:57:48.454Z",
+                  "updatedAt": "2020-04-05T05:02:02.448Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/products/related/{productId}": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT LIST RELATED",
+        "operationId": "GETPRODUCTLISTRELATED",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "createdAt"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "desc"
+            }
+          },
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "5e89654c69a8be1618fef638"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/products/by/search": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT LIST BY SEARCH",
+        "operationId": "GETPRODUCTLISTBYSEARCH",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GETPRODUCTLISTBYSEARCHREQUEST"
+              },
+              "example": {
+                "limit": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "381"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"17d-P70XxFU2kQYC8+zio0ENRpgvUIk\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Wed, 27 Jul 2022 04:16:35 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETPRODUCTLISTBYSEARCH"
+                },
+                "example": {
+                  "size": 1,
+                  "data": [
+                    {
+                      "sold": 0,
+                      "_id": "62e0bb925be5990756ad5b74",
+                      "name": "SQL  Book",
+                      "description": "My book",
+                      "price": 30,
+                      "category": {
+                        "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                        "name": "PYTHON",
+                        "createdAt": "2020-04-06T05:05:14.036Z",
+                        "updatedAt": "2020-04-06T05:07:48.845Z",
+                        "__v": 0
+                      },
+                      "shipping": false,
+                      "quantity": 4,
+                      "createdAt": "2022-07-27T04:14:10.241Z",
+                      "updatedAt": "2022-07-27T04:14:10.241Z",
+                      "__v": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/product/photo/{productId}": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "GET PRODUCT PHOTO",
+        "operationId": "GETPRODUCTPHOTO",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "62e0bb925be5990756ad5b74"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/user/{userId}": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "USER DETAILS",
+        "operationId": "USERDETAILS",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "null"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "USER UPDATE",
+        "operationId": "USERUPDATE",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "null"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/USERUPDATEREQUEST"
+              },
+              "example": {
+                "about": "businessman"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "USERSIGNUPREQUEST": {
+        "title": "USERSIGNUPREQUEST",
+        "required": [
+          "name",
+          "email",
+          "about",
+          "salt",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "about": {
+            "type": "string"
+          },
+          "salt": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "ubair",
+          "email": "ubair@gmail.com",
+          "about": "developer",
+          "salt": "String",
+          "password": "123456"
+        }
+      },
+      "USERSIGNUP": {
+        "title": "USERSIGNUP",
+        "required": [
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "example": {
+          "user": {
+            "role": 0,
+            "history": [],
+            "_id": "62e000ad3058680606377036",
+            "name": "ubair",
+            "email": "ubair@gmail.com",
+            "about": "developer",
+            "createdAt": "2022-07-26T14:56:45.420Z",
+            "updatedAt": "2022-07-26T14:56:45.420Z",
+            "__v": 0
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "required": [
+          "role",
+          "history",
+          "_id",
+          "name",
+          "email",
+          "about",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "about": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "role": 0,
+          "history": [],
+          "_id": "62e000ad3058680606377036",
+          "name": "ubair",
+          "email": "ubair@gmail.com",
+          "about": "developer",
+          "createdAt": "2022-07-26T14:56:45.420Z",
+          "updatedAt": "2022-07-26T14:56:45.420Z",
+          "__v": 0
+        }
+      },
+      "USERSIGNINREQUEST": {
+        "title": "USERSIGNINREQUEST",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "uzma@admin.com",
+          "password": "123456"
+        }
+      },
+      "USERSIGNIN": {
+        "title": "USERSIGNIN",
+        "required": [
+          "token",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User1"
+          }
+        },
+        "example": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmUwMDBhZDMwNTg2ODA2MDYzNzcwMzYiLCJpYXQiOjE2NTg4NDc1NDZ9.jnrkCfCZWDPUxI_2Yms8QV3dFRZ_HtSjWHGVctFXaaw",
+          "user": {
+            "_id": "62e000ad3058680606377036",
+            "email": "ubair@gmail.com",
+            "name": "ubair",
+            "role": 0
+          }
+        }
+      },
+      "User1": {
+        "title": "User1",
+        "required": [
+          "_id",
+          "email",
+          "name",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "62e000ad3058680606377036",
+          "email": "ubair@gmail.com",
+          "name": "ubair",
+          "role": 0
+        }
+      },
+      "USERSIGNOUT": {
+        "title": "USERSIGNOUT",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "message": "Signout success"
+        }
+      },
+      "ADDCATEGORYREQUEST": {
+        "title": "ADDCATEGORYREQUEST",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "JSP"
+        }
+      },
+      "ADDCATEGORY": {
+        "title": "ADDCATEGORY",
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          }
+        },
+        "example": {
+          "data": {
+            "_id": "62e0babb5be5990756ad5b68",
+            "name": "JSP",
+            "createdAt": "2022-07-27T04:10:35.854Z",
+            "updatedAt": "2022-07-27T04:10:35.854Z",
+            "__v": 0
+          }
+        }
+      },
+      "Data": {
+        "title": "Data",
+        "required": [
+          "_id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "62e0babb5be5990756ad5b68",
+          "name": "JSP",
+          "createdAt": "2022-07-27T04:10:35.854Z",
+          "updatedAt": "2022-07-27T04:10:35.854Z",
+          "__v": 0
+        }
+      },
+      "GETCATEGORy": {
+        "title": "GETCATEGORy",
+        "required": [
+          "_id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subCategory": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "_id": "5e88110830e7e82efceee4f0",
+          "name": "Node",
+          "createdAt": "2020-04-04T04:46:00.851Z",
+          "updatedAt": "2020-04-04T04:46:00.851Z",
+          "__v": 0
+        }
+      },
+      "GETCATEGORY1": {
+        "title": "GETCATEGORY1",
+        "required": [
+          "_id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "5e8ab88a68f48f4bc4d1dd7b",
+          "name": "PYTHON",
+          "createdAt": "2020-04-06T05:05:14.036Z",
+          "updatedAt": "2020-04-06T05:07:48.845Z",
+          "__v": 0
+        }
+      },
+      "DELETECATEGORYREQUEST": {
+        "title": "DELETECATEGORYREQUEST",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "winter wear"
+        }
+      },
+      "DELETECATEGORY": {
+        "title": "DELETECATEGORY",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "message": "Category deleted"
+        }
+      },
+      "UPDATECATEGORYREQUEST": {
+        "title": "UPDATECATEGORYREQUEST",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "NODE"
+        }
+      },
+      "UPDATECATEGORY": {
+        "title": "UPDATECATEGORY",
+        "required": [
+          "_id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "5eddb496de88a827e483581c",
+          "name": "NODE",
+          "createdAt": "2020-06-08T03:46:30.301Z",
+          "updatedAt": "2022-07-26T16:10:24.033Z",
+          "__v": 0
+        }
+      },
+      "DELETEPRODUCTREQUEST": {
+        "title": "DELETEPRODUCTREQUEST",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "winter wear"
+        }
+      },
+      "GETPRODUCTLIST": {
+        "title": "GETPRODUCTLIST",
+        "required": [
+          "sold",
+          "_id",
+          "name",
+          "description",
+          "price",
+          "category",
+          "shipping",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "sold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "shipping": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "sold": 0,
+          "_id": "5e89654c69a8be1618fef638",
+          "name": "Node Book",
+          "description": "My first book",
+          "price": 30,
+          "category": {
+            "_id": "5e88110830e7e82efceee4f0",
+            "name": "Node",
+            "createdAt": "2020-04-04T04:46:00.851Z",
+            "updatedAt": "2020-04-04T04:46:00.851Z",
+            "__v": 0
+          },
+          "shipping": false,
+          "createdAt": "2020-04-05T04:57:48.454Z",
+          "updatedAt": "2020-04-05T05:02:02.448Z",
+          "__v": 0
+        }
+      },
+      "Category": {
+        "title": "Category",
+        "required": [
+          "_id",
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "_id": "5e88110830e7e82efceee4f0",
+          "name": "Node",
+          "createdAt": "2020-04-04T04:46:00.851Z",
+          "updatedAt": "2020-04-04T04:46:00.851Z",
+          "__v": 0
+        }
+      },
+      "GETPRODUCT": {
+        "title": "GETPRODUCT",
+        "required": [
+          "sold",
+          "_id",
+          "name",
+          "description",
+          "price",
+          "category",
+          "shipping",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "sold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "shipping": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "sold": 0,
+          "_id": "5e89654c69a8be1618fef638",
+          "name": "Node Book",
+          "description": "My first book",
+          "price": 30,
+          "category": {
+            "_id": "5e88110830e7e82efceee4f0",
+            "name": "Node",
+            "createdAt": "2020-04-04T04:46:00.851Z",
+            "updatedAt": "2020-04-04T04:46:00.851Z",
+            "__v": 0
+          },
+          "shipping": false,
+          "createdAt": "2020-04-05T04:57:48.454Z",
+          "updatedAt": "2020-04-05T05:02:02.448Z",
+          "__v": 0
+        }
+      },
+      "GETPRODUCTLISTBYSEARCHREQUEST": {
+        "title": "GETPRODUCTLISTBYSEARCHREQUEST",
+        "required": [
+          "limit"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "limit": 1
+        }
+      },
+      "GETPRODUCTLISTBYSEARCH": {
+        "title": "GETPRODUCTLISTBYSEARCH",
+        "required": [
+          "size",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Data1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "size": 1,
+          "data": [
+            {
+              "sold": 0,
+              "_id": "62e0bb925be5990756ad5b74",
+              "name": "SQL  Book",
+              "description": "My book",
+              "price": 30,
+              "category": {
+                "_id": "5e8ab88a68f48f4bc4d1dd7b",
+                "name": "PYTHON",
+                "createdAt": "2020-04-06T05:05:14.036Z",
+                "updatedAt": "2020-04-06T05:07:48.845Z",
+                "__v": 0
+              },
+              "shipping": false,
+              "quantity": 4,
+              "createdAt": "2022-07-27T04:14:10.241Z",
+              "updatedAt": "2022-07-27T04:14:10.241Z",
+              "__v": 0
+            }
+          ]
+        }
+      },
+      "Data1": {
+        "title": "Data1",
+        "required": [
+          "sold",
+          "_id",
+          "name",
+          "description",
+          "price",
+          "category",
+          "shipping",
+          "quantity",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "type": "object",
+        "properties": {
+          "sold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "shipping": {
+            "type": "boolean"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "__v": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "sold": 0,
+          "_id": "62e0bb925be5990756ad5b74",
+          "name": "SQL  Book",
+          "description": "My book",
+          "price": 30,
+          "category": {
+            "_id": "5e8ab88a68f48f4bc4d1dd7b",
+            "name": "PYTHON",
+            "createdAt": "2020-04-06T05:05:14.036Z",
+            "updatedAt": "2020-04-06T05:07:48.845Z",
+            "__v": 0
+          },
+          "shipping": false,
+          "quantity": 4,
+          "createdAt": "2022-07-27T04:14:10.241Z",
+          "updatedAt": "2022-07-27T04:14:10.241Z",
+          "__v": 0
+        }
+      },
+      "USERUPDATEREQUEST": {
+        "title": "USERUPDATEREQUEST",
+        "required": [
+          "about"
+        ],
+        "type": "object",
+        "properties": {
+          "about": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "about": "businessman"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

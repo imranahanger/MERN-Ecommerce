@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 const {
     create,
@@ -9,26 +9,39 @@ const {
     update,
     list,
     listRelated,
+    listCategories,
     listBySearch,
     photo,
-    listCategories
-} = require('../controllers/product')
-const {userSignUpValidator} = require('./../validator')
-const {requireSignIn, isAuth, isAdmin} = require('../controllers/auth.js')
-const {userById} = require('./../controllers/user')
-router.get('/product/:productId', read)
-router.post('/product/create/:userId', requireSignIn, isAuth, isAdmin, create)
-router.delete('/product/:productId/:userId', requireSignIn, isAuth, isAdmin, remove)
-router.put('/product/:productId/:userId', requireSignIn, isAuth, isAdmin, update)
+    listSearch
+} = require("../controllers/product");
+const { requireSignin, isAuth, isAdmin } = require("../controllers/auth");
+const { userById } = require("../controllers/user");
 
-router.get('/products', list)
-router.get('/products/related/:productId', listRelated)
-router.get('/products/categories/:productId', listCategories)
+router.get("/product/:productId", read);
+router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create);
+router.delete(
+    "/product/:productId/:userId",
+    requireSignin,
+    isAuth,
+    isAdmin,
+    remove
+);
+router.put(
+    "/product/:productId/:userId",
+    requireSignin,
+    isAuth,
+    isAdmin,
+    update
+);
+
+router.get("/products", list);
+router.get("/products/search", listSearch);
+router.get("/products/related/:productId", listRelated);
+router.get("/products/categories", listCategories);
 router.post("/products/by/search", listBySearch);
-router.get("/products/photo/:productId", photo);
+router.get("/product/photo/:productId", photo);
 
-router.param('userId', userById)
-router.param('productId', productById)
+router.param("userId", userById);
+router.param("productId", productById);
 
-
-module.exports = router
+module.exports = router;
